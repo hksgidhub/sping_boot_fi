@@ -3,6 +3,8 @@ package com.imooc.exception;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.servlet.ModelAndView;
@@ -11,6 +13,8 @@ import com.imooc.pojo.IMoocJSONResult;
 
 @ControllerAdvice
 public class IMoocExceptionHandler {
+
+	final static Logger log = LoggerFactory.getLogger(IMoocExceptionHandler.class);
 
 	public static final String IMOOC_ERROR_VIEW = "error";
 
@@ -34,12 +38,15 @@ public class IMoocExceptionHandler {
     	e.printStackTrace();
     	
     	if (isAjax(reqest)) {
+			log.error("日志记录发生错误, errorAjaxMessage: {}", e.getMessage());
     		return IMoocJSONResult.errorException(e.getMessage());
     	} else {
     		ModelAndView mav = new ModelAndView();
             mav.addObject("exception", e);
             mav.addObject("url", reqest.getRequestURL());
             mav.setViewName(IMOOC_ERROR_VIEW);
+			log.error("日志记录发生错误, errorWebMessage: {}", e.getMessage());
+			log.error("日志记录发生错误, errorWebUrl: {}", reqest.getRequestURL());
             return mav;
     	}
     }

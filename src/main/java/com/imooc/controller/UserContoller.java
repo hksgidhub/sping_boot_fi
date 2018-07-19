@@ -18,7 +18,6 @@ public class UserContoller {
 	@RequestMapping("/getUser")
 //	@ResponseBody
 	public User getUser() {
-		
 		User u = new User();
 		u.setName("imooc2");
 		u.setAge(18);

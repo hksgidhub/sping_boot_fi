@@ -1,8 +1,8 @@
 package com.imooc.service;
 
-import java.util.List;
-
 import com.imooc.pojo.SysUser;
+
+import java.util.List;
 
 public interface UserService {
 
@@ -19,6 +19,6 @@ public interface UserService {
 	public List<SysUser> queryUserListPaged(SysUser user, Integer page, Integer pageSize);
 
 	public SysUser queryUserByIdCustom(String userId);
-	
+
 	public void saveUserTransactional(SysUser user);
 }

@@ -68,7 +68,8 @@ public class ThymeleafController {
 		
         return "redirect:/th/test";
     }
-	
+
+    //遇到错误跳到自定义页面
 	@RequestMapping("showerror")
     public String showerror(User u) {
 		

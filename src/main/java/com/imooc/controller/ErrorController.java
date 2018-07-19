@@ -14,7 +14,7 @@ public class ErrorController {
 	public String error() {
 		
 		int a = 1 / 0;
-		
+
 		return "thymeleaf/error";
 	}
 	

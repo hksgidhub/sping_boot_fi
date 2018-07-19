@@ -32,4 +32,12 @@ public class Code {
 
         return String.format("%d-%03d-%06d", workerId, prefix, next);
     }
+
+//    public static void main(String[] args) {
+//        //String aa = new Sid().nextShort();
+//        String bb = new Code().next();
+//
+//        //System.out.println(aa);
+//        System.out.println(bb);
+//    }
 }

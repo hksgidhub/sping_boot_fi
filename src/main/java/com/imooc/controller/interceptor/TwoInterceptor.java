@@ -15,6 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.imooc.pojo.IMoocJSONResult;
 import com.imooc.utils.JsonUtils;
 
+//HandlerInterceptor 拦截器
 public class TwoInterceptor implements HandlerInterceptor  {
 
 	final static Logger log = LoggerFactory.getLogger(TwoInterceptor.class);
@@ -23,9 +24,12 @@ public class TwoInterceptor implements HandlerInterceptor  {
 	 * 在请求处理之前进行调用（Controller方法调用之前）
 	 */
 	@Override
+	//HttpServletRequest 对象代表客户端的请求
+	//HttpServletResponse 重定向（响应）
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object object) throws Exception {
 		
 		if (true) {
+			//返回json给客户端
 			returnErrorResponse(response, IMoocJSONResult.errorMsg("被two拦截..."));
 		}
 		
@@ -60,6 +64,7 @@ public class TwoInterceptor implements HandlerInterceptor  {
 		    response.setCharacterEncoding("utf-8");
 		    response.setContentType("text/json");
 		    out = response.getOutputStream();
+		    //向response缓冲区中写入字节
 		    out.write(JsonUtils.objectToJson(result).getBytes("utf-8"));
 		    out.flush();
 		} finally{

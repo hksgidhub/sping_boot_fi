@@ -13,7 +13,7 @@
         </plugin>
 
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://localhost:3306/leecx"
+                        connectionURL="jdbc:mysql://localhost:3306/macket"
                         userId="root"
                         password="root">
         </jdbcConnection>
@@ -29,7 +29,7 @@
                              type="XMLMAPPER"/>
 
 
-		<table tableName="sys_user"></table>
+		<table tableName="user_info"></table>
 		 
     </context>
 </generatorConfiguration>

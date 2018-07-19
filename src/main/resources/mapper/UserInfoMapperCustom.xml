@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.imooc.mapper.UserInfoMapperCustom" >
+  
+  <!-- 查询简单的用户信息 -->
+	<select id="queryUserInfoSimplyInfoById" resultType="com.imooc.pojo.UserInfo"
+										 parameterType="java.lang.Long" >
+	    select
+			*
+	    from
+			user_info
+	    where
+	    	id = #{id,jdbcType=BIGINT}
+	</select>
+</mapper>

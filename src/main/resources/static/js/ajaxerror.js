@@ -12,6 +12,6 @@ $.ajax({
     	},
         error: function (response, ajaxOptions, thrownError) {
         	debugger;
-        	alert("error");       
+        	alert("errors");
         }
     });

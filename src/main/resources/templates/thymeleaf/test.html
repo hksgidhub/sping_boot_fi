@@ -54,8 +54,8 @@ URL:<br/>
 
 <br/>
 <div th:if="${user.age} == 18">十八岁的天空</div>
-<div th:if="${user.age} gt 18">你老了</div>
-<div th:if="${user.age} lt 18">你很年轻</div>
+<div th:if="${user.age} gt 18">大于18岁你老了</div>
+<div th:if="${user.age} lt 18">小于18岁你很年轻</div>
 <div th:if="${user.age} ge 18">大于等于</div>
 <div th:if="${user.age} le 18">小于等于</div>
 <br/>
@@ -80,7 +80,7 @@ URL:<br/>
     <tr th:each="person:${userList}">
         <td th:text="${person.name}"></td>
         <td th:text="${person.age}"></td>
-        <td th:text="${person.age gt 18} ? 你老了 : 你很年轻">18岁</td>
+        <td th:text="${person.age gt 18} ? 你老了！ : 你很年轻">18岁</td>
         <td th:text="${#dates.format(user.birthday, 'yyyy-MM-dd hh:mm:ss')}"></td>
     </tr>
 </table>

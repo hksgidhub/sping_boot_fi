@@ -1,7 +1,9 @@
 package org.n3r.idworker;
 
 import org.n3r.idworker.strategy.DefaultWorkerIdStrategy;
+import org.springframework.stereotype.Component;
 
+@Component
 public class Id {
     private static WorkerIdStrategy workerIdStrategy;
     private static IdWorker idWorker;
@@ -26,4 +28,5 @@ public class Id {
     public static long getWorkerId() {
         return idWorker.getWorkerId();
     }
+
 }
